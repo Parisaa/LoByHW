@@ -11,7 +11,7 @@ wire[256:0] round_o_s [(nr_rounds-1):0];
 genvar i;
 generate
     for (i=0; i<nr_rounds; i=i+1) begin: LolaP_round_n
-        if (r == 1 || r == 3 || r == 4 || r == 7 || r == 8) begin
+        if (i == 1 || i == 3 || i == 4 || i == 7 || i == 8) begin
             LolaP_round_w LolaP_round_w_ins(
                 .round_i(round_i_s[i]),
                 .round_o(round_o_s[i])
