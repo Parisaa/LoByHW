@@ -4,7 +4,7 @@ module tb_LoBy
 skip_test = 0, 
 SIZE = 257,
 SIZE_DIN = 64, 
-test_memory_file_LolaP = "/home/sirena/Documents/LoByAnoRepo/data_tests/test_vectors.txt",
+test_memory_file_LolaP = "/home/sirena/Documents/LoByAnoRepo/data_tests/test_vectors-n.txt",
 sim_enable_dump = 0 // 1 - True, 0 - False
 );
 
