@@ -11,10 +11,17 @@ wire[256:0] round_o_s [(nr_rounds-1):0];
 genvar i;
 generate
     for (i=0; i<nr_rounds; i=i+1) begin: LolaP_round_n
-    LolaP_round LolaP_round_ins(
-        .round_i(round_i_s[i]),
-        .round_o(round_o_s[i])
-    );
+        if (r == 1 || r == 3 || r == 4 || r == 7 || r == 8) begin
+            LolaP_round_w LolaP_round_w_ins(
+                .round_i(round_i_s[i]),
+                .round_o(round_o_s[i])
+            );
+        end else begin
+            LolaP_round_wo LolaP_round_wo_ins(
+                .round_i(round_i_s[i]),
+                .round_o(round_o_s[i])
+            );
+        end
     end 
 endgenerate
 
